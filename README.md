@@ -24,17 +24,17 @@ Your submission repository follows the required layout and file standards:
 
 veritas-claims-/
   * config/
-    * pipeline_config.yaml      # Metadata store: clinic mappings, test synonyms, unit conversions, reference ranges, & med dictionary
-├── sample-data/                  # Input JSON files (Sample_JSON_file1.json to Sample_JSON_file5.json)
-├── src/
-│   ├── pipeline.py               # Core pipeline: Ingestion, deduplication, standardisation, validation, dual-schema DB loader
-│   └── ui_app.py                 # Streamlit operational web dashboard (Stats, Flagged queue, Inspector, Clinic metrics)
-├── tests/
-│   └── test_pipeline.py          # Pytest unit tests verifying standardisation & validation logic
-├── docs/
-│   ├── architecture.drawio       # Draw.io solution architecture diagram
-│   └── ASSUMPTIONS.md            # Structured business, technical, data assumptions & scope exclusions
-└── README.md                     # Comprehensive project documentation 
+    * pipeline_config.yaml           # Metadata store: clinic mappings, test synonyms, unit conversions, reference ranges, & med dictionary
+  * sample-data/                     # Input JSON files (Sample_JSON_file1.json to Sample_JSON_file5.json)
+  * src/
+    * pipeline.py                   # Core pipeline: Ingestion, deduplication, standardisation, validation, dual-schema DB loader
+    * ui_app.py                     # Streamlit operational web dashboard (Stats, Flagged queue, Inspector, Clinic metrics)
+  * tests/
+    * test_pipeline.py             # Pytest unit tests verifying standardisation & validation logic
+  * docs/
+    * architecture.drawio         # Draw.io solution architecture diagram
+    * ASSUMPTIONS.md              # Structured business, technical, data assumptions & scope exclusions
+  * README.md                     # Comprehensive project documentation 
 
 ## 3. Setup & Execution Instructions
 
