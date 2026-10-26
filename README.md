@@ -39,7 +39,7 @@ veritas-claims-/
 ## 3. Setup & Execution Instructions
 
 Prerequisites
-  *Python 3.9+ installed on your system.
+  * Python 3.9+ installed on your system.
 
 Step 1: Clone & Navigate to Repository
   
