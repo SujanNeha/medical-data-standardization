@@ -39,25 +39,25 @@ veritas-claims-/
 ## 3. Setup & Execution Instructions
 
 Prerequisites
-  Python 3.9+ installed on your system.
+  *Python 3.9+ installed on your system.
 
 Step 1: Clone & Navigate to Repository
   
 Step 2: Create Virtual Environment & Install Dependencies
 
-  python -m venv venv
-  source venv/bin/activate  # On Windows use: venv\Scripts\activate
-  pip install pandas pyyaml streamlit pytest matplotlib
+  * python -m venv venv
+  * source venv/bin/activate  # On Windows use: venv\Scripts\activate
+  * pip install pandas pyyaml streamlit pytest matplotlib
 
 Step 3: Run the Data PipelineExecute the end-to-end pipeline to discover sample JSONs, run multi-tier deduplication, unpack multi-value lab strings, harmonise units, validate ranges/outliers, and write idempotently into SQLite (veritas_claims.db):
-  python src/pipeline.py
+  * python src/pipeline.py
 
   
 Step 4: Launch the Operational UI (FR-5)
-  streamlit run src/ui_app.py
+  * streamlit run src/ui_app.py
   
 Step 5: Run Unit Tests
-  pytest tests/test_pipeline.py
+  * pytest tests/test_pipeline.py
 
 
 
