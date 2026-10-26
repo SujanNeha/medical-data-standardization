@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="7Oo6t2q3mKb6IYfzgyG8">
+    <mxGraphModel dx="1334" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zone_ingest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="1. Ingestion &amp; Landing Layer (FR-1)" vertex="1">
+          <mxGeometry height="380" width="220" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="clinics" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="500+ Clinics &amp; Labs&#xa;(JSON Reports)" vertex="1">
+          <mxGeometry height="60" width="30" x="115" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gcs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="GCS Bucket / Landing Store&#xa;gs://veritas-raw/{clinic}/{date}/" vertex="1">
+          <mxGeometry height="60" width="160" x="70" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dedup" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Deduplication Engine&#xa;(Content Hash &amp; Composite Key)" vertex="1">
+          <mxGeometry height="60" width="160" x="70" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="zone_proc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="2. Processing &amp; Standardisation Layer (FR-2 &amp; FR-3)" vertex="1">
+          <mxGeometry height="380" width="280" x="300" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="config" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Config Store (YAML)&#xa;Synonyms, Units, Ranges, Meds" vertex="1">
+          <mxGeometry height="70" width="110" x="325" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="workers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" value="Cloud Run / Python Workers&#xa;- Test Name Normalisation (FR-2.1)&#xa;- Numeric Extraction &amp; Unpacking (FR-2.3)&#xa;- Unit Harmonisation (FR-2.4)&#xa;- Range &amp; Outlier Validation (FR-3)" vertex="1">
+          <mxGeometry height="120" width="240" x="320" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="dlq" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Dead-Letter Queue (DLQ)&#xa;(Malformed JSON / Errors)" vertex="1">
+          <mxGeometry height="60" width="240" x="320" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="zone_store" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="3. Storage &amp; Governance Layer (FR-4)" vertex="1">
+          <mxGeometry height="380" width="220" x="620" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundFill=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=15;" value="BigQuery / PostgreSQL / SQLite&#xa;- 78-Col Ideal Schema Table&#xa;- FR-2.2 5-Col-Per-Test Schema&#xa;- Raw Audit JSON Trail" vertex="1">
+          <mxGeometry height="140" width="180" x="640" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zone_ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;" value="4. Operational UI Layer (FR-5)" vertex="1">
+          <mxGeometry height="380" width="220" x="880" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;" value="Streamlit Operational Web App&#xa;- Pipeline Dashboard (FR-5.1)&#xa;- Record Inspector (FR-5.2)&#xa;- Flagged Records Queue (FR-5.3)&#xa;- Clinic Quality Scorecards (FR-5.4)" vertex="1">
+          <mxGeometry height="120" width="180" x="900" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="clinics" target="gcs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="gcs" target="dedup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="dedup" target="workers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="config" target="workers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="workers" target="dlq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="workers" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="db" target="ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
