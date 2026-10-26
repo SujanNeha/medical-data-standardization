@@ -1,0 +1,373 @@
+deduplication:
+  enable_cross_file_dedup: true
+  enable_intra_file_section_dedup: true
+  enable_intra_report_row_dedup: true
+
+canonical_tests:
+  Hemoglobin:
+    synonyms: ["haemoglobin", "hemoglobin", "aemoglobin", "hb", "hgb", "haemoglobin (whole blood/photometric method)"]
+    canonical_unit: "g/dL"
+    range_low: 12.0
+    range_high: 17.0
+    range_text: "12.0 - 17.0"
+    outlier_low: 3.0
+    outlier_high: 25.0
+    unit_conversions: {"g/dl": 1.0, "gm/dl": 1.0, "g/l": 0.1}
+  White Blood Cell Count:
+    synonyms: ["white blood cell count", "total wbc count", "wbc count", "tal wbc count", "total leucocyte count (tlc)", "total leucocyte count (tlc) (whole blood/impedence method)", "corrected tlc", "wbc"]
+    canonical_unit: "cells/cu.mm"
+    range_low: 4000.0
+    range_high: 11000.0
+    range_text: "4000 - 11000"
+    outlier_low: 500.0
+    outlier_high: 100000.0
+    unit_conversions: {"cells/cu.mm": 1.0, "cell/cu.mm": 1.0, "cells/cumm": 1.0, "mil/cu.mm": 1000000.0}
+  Red Blood Cell Count (RBC):
+    synonyms: ["red blood cell count (rbc)", "rbc", "rbc count", "red blood cell count", "red blood cell count (whole blood/ impedenco method)"]
+    canonical_unit: "mil/cu.mm"
+    range_low: 4.5
+    range_high: 5.5
+    range_text: "4.5 - 5.5"
+    outlier_low: 1.0
+    outlier_high: 10.0
+    unit_conversions: {"mil/cu.mm": 1.0, "million/cu.mm": 1.0, "million/cumm": 1.0, "mil/cu.cm": 0.001}
+  Platelet Count:
+    synonyms: ["platelet count", "atelet count", "lac/cmm"]
+    canonical_unit: "cells/cu.mm"
+    range_low: 150000.0
+    range_high: 410000.0
+    range_text: "150000 - 410000"
+    outlier_low: 10000.0
+    outlier_high: 1500000.0
+    unit_conversions: {"cells/cu.mm": 1.0, "lakhs/cumm": 100000.0, "lac/cmm": 100000.0, "atelet count": 100000.0}
+  Hematocrit (PCV):
+    synonyms: ["hematocrit", "haematocrit", "haematocrit (pcv)", "ematocrit hct", "pcv", "packed cell volume (pcv)", "packed cell volume (pcv) (whole blood/ impedenco method)", "bc indices"]
+    canonical_unit: "%"
+    range_low: 36.0
+    range_high: 50.0
+    range_text: "36.0 - 50.0"
+    outlier_low: 10.0
+    outlier_high: 75.0
+    unit_conversions: {"%": 1.0}
+  Mean Corpuscular Volume (MCV):
+    synonyms: ["mcv", "mean cell volume (mcv)", "mean cell volume (mcv) (whole blood/calculalod)", "lean corp volume mcv"]
+    canonical_unit: "fL"
+    range_low: 80.0
+    range_high: 101.0
+    range_text: "80.0 - 101.0"
+    outlier_low: 40.0
+    outlier_high: 150.0
+    unit_conversions: {"fl": 1.0}
+  Mean Corpuscular Hemoglobin (MCH):
+    synonyms: ["mch", "mch (whole blood/calculated)"]
+    canonical_unit: "pg"
+    range_low: 27.0
+    range_high: 32.0
+    range_text: "27.0 - 32.0"
+    outlier_low: 10.0
+    outlier_high: 60.0
+    unit_conversions: {"pg": 1.0}
+  Mean Corpuscular Hemoglobin Concentration (MCHC):
+    synonyms: ["mchc", "mchc (whole blood/calculated)", "lean corp hb conc mchc"]
+    canonical_unit: "g/dL"
+    range_low: 31.5
+    range_high: 34.5
+    range_text: "31.5 - 34.5"
+    outlier_low: 20.0
+    outlier_high: 45.0
+    unit_conversions: {"g/dl": 1.0, "gm/dl": 1.0}
+  RDW-CV:
+    synonyms: ["rdw - cv", "dw-cv", "r.d.w", "rdw - cv (whole blood/impedence method)"]
+    canonical_unit: "%"
+    range_low: 11.6
+    range_high: 14.0
+    range_text: "11.6 - 14.0"
+    outlier_low: 5.0
+    outlier_high: 35.0
+    unit_conversions: {"%": 1.0}
+  RDW-SD:
+    synonyms: ["rdw - sd", "dw-sd"]
+    canonical_unit: "fL"
+    range_low: 37.0
+    range_high: 54.0
+    range_text: "37.0 - 54.0"
+    outlier_low: 10.0
+    outlier_high: 120.0
+    unit_conversions: {"fl": 1.0}
+  Mean Platelet Volume (MPV):
+    synonyms: ["mpv", "mpv (mean platelet volume)", "latelet indices"]
+    canonical_unit: "fL"
+    range_low: 8.1
+    range_high: 13.9
+    range_text: "8.1 - 13.9"
+    outlier_low: 3.0
+    outlier_high: 25.0
+    unit_conversions: {"fl": 1.0, "fi": 1.0, "il": 1.0}
+  Neutrophils:
+    synonyms: ["neutrophils", "neutrophil", "eutrophils"]
+    canonical_unit: "%"
+    range_low: 40.0
+    range_high: 70.0
+    range_text: "40.0 - 70.0"
+    outlier_low: 0.0
+    outlier_high: 100.0
+    unit_conversions: {"%": 1.0}
+  Lymphocytes:
+    synonyms: ["lymphocytes", "lymphocyte", "mphocytes"]
+    canonical_unit: "%"
+    range_low: 20.0
+    range_high: 40.0
+    range_text: "20.0 - 40.0"
+    outlier_low: 0.0
+    outlier_high: 100.0
+    unit_conversions: {"%": 1.0}
+  Eosinophils:
+    synonyms: ["eosinophils", "sinophils"]
+    canonical_unit: "%"
+    range_low: 1.0
+    range_high: 6.0
+    range_text: "1.0 - 6.0"
+    outlier_low: 0.0
+    outlier_high: 50.0
+    unit_conversions: {"%": 1.0}
+  Monocytes:
+    synonyms: ["monocytes", "onocytes"]
+    canonical_unit: "%"
+    range_low: 2.0
+    range_high: 8.0
+    range_text: "2.0 - 8.0"
+    outlier_low: 0.0
+    outlier_high: 50.0
+    unit_conversions: {"%": 1.0}
+  Basophils:
+    synonyms: ["basophils", "sophils"]
+    canonical_unit: "%"
+    range_low: 0.0
+    range_high: 2.0
+    range_text: "0.0 - 2.0"
+    outlier_low: 0.0
+    outlier_high: 20.0
+    unit_conversions: {"%": 1.0}
+  Alanine Aminotransferase (ALT/SGPT):
+    synonyms: ["alanine aminotransferase", "alanine aminotransferase (alt/sgpt)", "alanine aminotransferase(alt/sgpt)", "alanine transaminase (alt)", "alt (sgpt)"]
+    canonical_unit: "U/L"
+    range_low: 0.0
+    range_high: 50.0
+    range_text: "0.0 - 50.0"
+    outlier_low: 0.0
+    outlier_high: 5000.0
+    unit_conversions: {"u/l": 1.0}
+  Aspartate Aminotransferase (AST/SGOT):
+    synonyms: ["aspartate aminotransferase", "aspartate aminotransferase (ast/sgot)", "aspartate aminotransferase(ast/sgot)", "aspartate transaminase (sgot, hast)", "ast (sgot)"]
+    canonical_unit: "U/L"
+    range_low: 14.0
+    range_high: 59.0
+    range_text: "14.0 - 59.0"
+    outlier_low: 0.0
+    outlier_high: 5000.0
+    unit_conversions: {"u/l": 1.0, "ua": 1.0}
+  Alkaline Phosphatase (ALP):
+    synonyms: ["alkaline phosphatase", "alkaline phosphatase (alp)"]
+    canonical_unit: "U/L"
+    range_low: 38.0
+    range_high: 126.0
+    range_text: "38.0 - 126.0"
+    outlier_low: 5.0
+    outlier_high: 2000.0
+    unit_conversions: {"u/l": 1.0, "uil": 1.0}
+  Total Protein:
+    synonyms: ["protein, total", "protein,total", "total protein"]
+    canonical_unit: "g/dL"
+    range_low: 6.3
+    range_high: 8.3
+    range_text: "6.3 - 8.3"
+    outlier_low: 2.0
+    outlier_high: 15.0
+    unit_conversions: {"g/dl": 1.0, "gm/dl": 1.0}
+  Albumin:
+    synonyms: ["albumin", "albumin, serum"]
+    canonical_unit: "g/dL"
+    range_low: 3.5
+    range_high: 5.4
+    range_text: "3.5 - 5.4"
+    outlier_low: 1.0
+    outlier_high: 10.0
+    unit_conversions: {"g/dl": 1.0, "gm/dl": 1.0, "gm/di": 1.0}
+  Globulin:
+    synonyms: ["globulin", "globulin (calculated)"]
+    canonical_unit: "g/dL"
+    range_low: 2.0
+    range_high: 3.5
+    range_text: "2.0 - 3.5"
+    outlier_low: 0.5
+    outlier_high: 10.0
+    unit_conversions: {"g/dl": 1.0, "gm/dl": 1.0}
+  A/G Ratio:
+    synonyms: ["a/g ratio", "albumin/globulin ratio", "albumin/globulin ratio (calculated)"]
+    canonical_unit: "ratio"
+    range_low: 0.9
+    range_high: 2.1
+    range_text: "0.9 - 2.1"
+    outlier_low: 0.1
+    outlier_high: 10.0
+    unit_conversions: {"ratio": 1.0, "": 1.0}
+  Bilirubin Total:
+    synonyms: ["bilirubin total", "liver function test(lft)", "liver function test (lft) , serum"]
+    canonical_unit: "mg/dL"
+    range_low: 0.0
+    range_high: 1.2
+    range_text: "0.0 - 1.2"
+    outlier_low: 0.0
+    outlier_high: 40.0
+    unit_conversions: {"mg/dl": 1.0}
+  Bilirubin Direct:
+    synonyms: ["bilirubin conjugated (direct)", "bilirubin conjugated(direct)", "bilirubin direct"]
+    canonical_unit: "mg/dL"
+    range_low: 0.0
+    range_high: 0.3
+    range_text: "0.0 - 0.3"
+    outlier_low: 0.0
+    outlier_high: 30.0
+    unit_conversions: {"mg/dl": 1.0}
+  Bilirubin Indirect:
+    synonyms: ["bilirubin (indirect)", "bilirubin(indirect)", "bilirubin indirect"]
+    canonical_unit: "mg/dL"
+    range_low: 0.0
+    range_high: 0.8
+    range_text: "0.0 - 0.8"
+    outlier_low: 0.0
+    outlier_high: 30.0
+    unit_conversions: {"mg/dl": 1.0}
+  Serum Creatinine:
+    synonyms: ["serum creatinine", "creatinine", "creatinine, serum", "renal profile/kidney function test (rft/kft), serum", "kft - sr creatinine - 0.3"]
+    canonical_unit: "mg/dL"
+    range_low: 0.52
+    range_high: 1.25
+    range_text: "0.52 - 1.25"
+    outlier_low: 0.1
+    outlier_high: 25.0
+    unit_conversions: {"mg/dl": 1.0}
+  Urea Nitrogen (BUN):
+    synonyms: ["blood urea nitrogen", "urea", "blood urea"]
+    canonical_unit: "mg/dL"
+    range_low: 8.0
+    range_high: 43.0
+    range_text: "8.0 - 43.0"
+    outlier_low: 1.0
+    outlier_high: 300.0
+    unit_conversions: {"mg/dl": 1.0}
+  Uric Acid:
+    synonyms: ["uric acid", "uric acid, serum"]
+    canonical_unit: "mg/dL"
+    range_low: 2.0
+    range_high: 8.5
+    range_text: "2.0 - 8.5"
+    outlier_low: 0.5
+    outlier_high: 25.0
+    unit_conversions: {"mg/dl": 1.0}
+  Calcium:
+    synonyms: ["calcium", "serum calcium", "ca2+ (calcium)"]
+    canonical_unit: "mg/dL"
+    range_low: 8.4
+    range_high: 10.2
+    range_text: "8.4 - 10.2"
+    outlier_low: 4.0
+    outlier_high: 18.0
+    unit_conversions: {"mg/dl": 1.0}
+  Phosphorus:
+    synonyms: ["phosphorus, inorganic", "phosphorus serum"]
+    canonical_unit: "mg/dL"
+    range_low: 2.5
+    range_high: 6.5
+    range_text: "2.5 - 6.5"
+    outlier_low: 0.5
+    outlier_high: 15.0
+    unit_conversions: {"mg/dl": 1.0}
+  Sodium:
+    synonyms: ["sodium", "sodium (na+)", "na+", "na + (127)"]
+    canonical_unit: "mmol/L"
+    range_low: 135.0
+    range_high: 145.0
+    range_text: "135.0 - 145.0"
+    outlier_low: 100.0
+    outlier_high: 180.0
+    unit_conversions: {"mmol/l": 1.0}
+  Potassium:
+    synonyms: ["potassium", "potassium (k+)", "k+"]
+    canonical_unit: "mmol/L"
+    range_low: 3.5
+    range_high: 5.1
+    range_text: "3.5 - 5.1"
+    outlier_low: 1.5
+    outlier_high: 9.0
+    unit_conversions: {"mmol/l": 1.0}
+  Chloride:
+    synonyms: ["chloride", "chloride (ci-)"]
+    canonical_unit: "mmol/L"
+    range_low: 98.0
+    range_high: 107.0
+    range_text: "98.0 - 107.0"
+    outlier_low: 60.0
+    outlier_high: 140.0
+    unit_conversions: {"mmol/l": 1.0}
+  Estimated Glomerular Filtration Rate (eGFR):
+    synonyms: ["egfr", "egfr - estimated glomerular", "filtration rate", "egfr - estimated glomerular filtration rate"]
+    canonical_unit: "mL/min/1.73m2"
+    range_low: 60.0
+    range_high: 140.0
+    range_text: ">= 60"
+    outlier_low: 2.0
+    outlier_high: 250.0
+    unit_conversions: {"ml/min/1.73m2": 1.0}
+  C-Reactive Protein (CRP):
+    synonyms: ["c-reactive protein (crp)", "crp", "crp-quantitative"]
+    canonical_unit: "mg/L"
+    range_low: 0.0
+    range_high: 6.0
+    range_text: "0.0 - 6.0"
+    outlier_low: 0.0
+    outlier_high: 500.0
+    unit_conversions: {"mg/l": 1.0}
+
+medicine_mappings:
+  "tab. miso": "Misoprostol"
+  "inj. synto": "Oxytocin"
+  "inj. pan": "Pantoprazole"
+  "cap. pan 40": "Pantoprazole 40mg"
+  "tab. pan - 40": "Pantoprazole 40mg"
+  "tab. pan - 40 (before breakfast)": "Pantoprazole 40mg"
+  "inj pantop 40 mg iv 12 hrly": "Pantoprazole 40mg"
+  "inj. pantocid 40 mg": "Pantoprazole 40mg"
+  "cap. pan d": "Pantoprazole + Domperidone"
+  "inj. pcm": "Paracetamol"
+  "inj pcm 1 gm iv stat 12hrly": "Paracetamol 1g"
+  "tab dolo 650": "Paracetamol 650mg"
+  "tab. dolo - 650 mg": "Paracetamol 650mg"
+  "tab. dolo - 650 mg(in case of fever)": "Paracetamol 650mg"
+  "inj. dynapar": "Diclofenac"
+  "tab. diclomol": "Diclofenac + Paracetamol"
+  "inj. emeset": "Ondansetron"
+  "inj. emeset 4 mg iv 02 hrly": "Ondansetron 4mg"
+  "inj. fortwin": "Pentazocine"
+  "inj. phenargan": "Promethazine"
+  "cap. vizylac": "Lactic Acid Bacillus (Probiotic)"
+  "tab ceftum 500 mg": "Cefuroxime 500mg"
+  "inj. supacef": "Cefuroxime"
+  "powder naturolax": "Ispaghula Husk"
+  "syp duphalac": "Lactulose"
+  "syp-lactoloo2": "Lactulose"
+  "tab medicip": "Ciprofloxacin"
+  "inj. monocef 1 gr/ iv 12 hrly": "Ceftriaxone 1g"
+  "inj neuro bion forte iv 1 amp 24hrly": "Vitamin B-Complex (B1+B6+B12)"
+  "tab. ceftas- 400": "Cefixime 400mg"
+  "tab. ceftas- 400 (after food)": "Cefixime 400mg"
+  "tab. azithral 500 mg": "Azithromycin 500mg"
+  "tab. ultracet": "Tramadol + Paracetamol"
+  "tab. zincovit": "Multivitamin + Multimineral + Zinc"
+  "inj. bucsopan": "Hyoscine Butylbromide"
+  "drotin": "Drotaverine"
+  "eco norm sachet": "Saccharomyces Boulardii (Probiotic)"
+  "econorm sachet": "Saccharomyces Boulardii (Probiotic)"
+  "syp- bandy plus 10": "Albendazole + Ivermectin"
+  "syp bandy plus": "Albendazole + Ivermectin"
+  "aciloc inj": "Ranitidine"
