@@ -22,9 +22,9 @@ A scalable, intelligent, metadata-driven data pipeline that ingests raw JSON rep
 
 Your submission repository follows the required layout and file standards:
 
-veritas-claims-pipeline/
-├── config/
-│   └── pipeline_config.yaml      # Metadata store: clinic mappings, test synonyms, unit conversions, reference ranges, & med dictionary
+veritas-claims-/
+  * config/
+    * pipeline_config.yaml      # Metadata store: clinic mappings, test synonyms, unit conversions, reference ranges, & med dictionary
 ├── sample-data/                  # Input JSON files (Sample_JSON_file1.json to Sample_JSON_file5.json)
 ├── src/
 │   ├── pipeline.py               # Core pipeline: Ingestion, deduplication, standardisation, validation, dual-schema DB loader
